@@ -1,5 +1,7 @@
 package com.sxs.item.ui.activity;
 
+import android.os.Build;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -8,9 +10,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.sxs.inject.view.ViewById;
 import com.sxs.item.R;
 import com.sxs.item.common.BaseActivity;
+import com.sxs.item.helper.BottomNavigationViewHelper;
 import com.sxs.item.ui.fragment.FragmentA;
 import com.sxs.item.ui.fragment.FragmentB;
 import com.sxs.item.ui.fragment.FragmentC;
@@ -33,15 +37,30 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     protected void initView() {
+        //设置导航栏监听器
+        mBottomNavigationView.setOnNavigationItemSelectedListener(this);
+        //设置默认选择的导航栏子项tab_one即首页
+        mBottomNavigationView.setSelectedItemId(R.id.tab_one);
+        //取消导航栏子项图片的颜色覆盖
+        mBottomNavigationView.setItemIconTintList(null);
+        // 取消底部导航栏的动画效果, 如果sdk版本小于28则调用方法，大于28则设置属性
+        // msg：调用设置没有效果
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+            // 设置属性
+            mBottomNavigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
+            mBottomNavigationView.setItemHorizontalTranslationEnabled(false);
+        }else {
+            BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
+        }
+
+
 
     }
 
     @Override
     protected void initData() {
         super.initData();
-        mBottomNavigationView.setOnNavigationItemSelectedListener(this);//设置导航栏监听器
-        mBottomNavigationView.setSelectedItemId(R.id.tab_one);//设置默认选择的导航栏子项tab_one即首页
-        mBottomNavigationView.setItemIconTintList(null);//取消导航栏子项图片的颜色覆盖
+
     }
 
     /**
@@ -76,7 +95,6 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         return false;
     }
 
-
     // 替换Fragment 的方法
     public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -84,4 +102,10 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         transaction.replace(R.id.fragment_empty, fragment);
         transaction.commit();
     }
+
+    /**
+     * 当BottonNavigationBar 的items大于三个时
+     * 取消这个底部导航栏的动画效果
+     */
+
 }

@@ -1,7 +1,9 @@
 package com.sxs.item.common;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
@@ -22,21 +24,33 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        if (getLayoutId() > 0){
+            setContentView(getLayoutId());
+        }
+        init();
+    }
+
+    protected void init(){
+        // View 绑定
         ViewBind.inject(this);
+        // 设置状态栏状态
         setStatusBar();
+        // 初始视图
         initView();
+        // 初始化数据
         initData();
+        // 将activity 入栈
         ActivityStackManager.getInstance().addActivity(this);
     }
 
     private void setStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary, null));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary, null));
+        }
     }
 
     /**
      * 布局ID
-     *
      * @return 布局
      */
     protected abstract int getLayoutId();
@@ -82,7 +96,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityStackManager.getInstance().removeActivity(this);
         super.onDestroy();
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

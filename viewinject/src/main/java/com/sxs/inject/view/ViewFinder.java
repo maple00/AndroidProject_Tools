@@ -20,8 +20,9 @@ public class ViewFinder {
      */
     private Class<?> mClass;
 
-    public ViewFinder(Activity mActivit) {
-        this.mActivit = mActivit;
+    public ViewFinder(Activity activity) {
+        this.mActivit = activity;
+        this.mClass = activity.getClass();
     }
 
     /**
