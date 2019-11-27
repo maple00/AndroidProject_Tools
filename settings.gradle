@@ -1,0 +1,2 @@
+include ':app', ':viewinject'
+rootProject.name='AndroidProject_Tools'
