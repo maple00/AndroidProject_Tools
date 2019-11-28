@@ -19,6 +19,7 @@ import com.sxs.item.ui.fragment.FragmentA;
 import com.sxs.item.ui.fragment.FragmentB;
 import com.sxs.item.ui.fragment.FragmentC;
 import com.sxs.item.ui.fragment.FragmentD;
+import com.sxs.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -37,6 +38,8 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     protected void initView() {
+        // 设置整体下移，状态栏沉浸
+        StatusBarUtil.setRootViewFitsSystemWindows(this, false);
         //设置导航栏监听器
         mBottomNavigationView.setOnNavigationItemSelectedListener(this);
         //设置默认选择的导航栏子项tab_one即首页
@@ -52,7 +55,6 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         }else {
             BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
         }
-
 
 
     }

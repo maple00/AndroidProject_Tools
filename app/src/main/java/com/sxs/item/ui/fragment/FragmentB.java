@@ -1,9 +1,16 @@
 package com.sxs.item.ui.fragment;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
+import com.sxs.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -11,23 +18,20 @@ import com.sxs.item.common.BaseFragment;
  * @des: Fragment B
  */
 public class FragmentB extends BaseFragment {
+
     @Override
-    public int setLayoutId() {
+    protected int initLayout() {
         return R.layout.fragment_kind;
     }
 
     @Override
-    public void findViewById(View view) {
+    protected void initView(View view) {
 
     }
 
     @Override
-    public void setViewData(View view) {
+    protected void initData(Context mContext) {
 
     }
 
-    @Override
-    public void setClickEvent(View view) {
-
-    }
 }

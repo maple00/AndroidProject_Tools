@@ -1,2 +1,2 @@
-include ':app', ':viewinject'
+include ':app', ':viewinject', ':statusBarLibrary', ':tools'
 rootProject.name='AndroidProject_Tools'
