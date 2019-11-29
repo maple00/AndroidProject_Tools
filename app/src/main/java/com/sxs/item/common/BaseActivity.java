@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sxs.inject.view.ViewBind;
 import com.sxs.item.R;
 import com.sxs.item.helper.ActivityStackManager;
 import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.toast.ToastUtils;
 
 /**
  * @Author: shearson
@@ -118,9 +120,25 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-
         overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
     }
+
+    /**
+     * 显示吐司
+     */
+    public void toast(CharSequence text) {
+        ToastUtils.show(text);
+    }
+
+    public void toast(@StringRes int id) {
+        ToastUtils.show(id);
+    }
+
+    public void toast(Object object) {
+        ToastUtils.show(object);
+    }
+
+
 
 
     @Override
