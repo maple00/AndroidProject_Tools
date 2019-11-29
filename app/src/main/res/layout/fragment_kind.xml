@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,23 +12,115 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <com.sxs.tools.view.CountdownView
-                android:id="@+id/cv_test_countdown"
-                style="@style/CountdownViewStyle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.sxs.tools.view.CountdownView
-                style="@style/CountdownViewStyle"
-                android:enabled="false" />
+                <com.sxs.tools.view.CountdownView
+                    android:id="@+id/cv_test_countdown"
+                    style="@style/CountdownViewStyle" />
+
+                <com.sxs.tools.view.CountdownView
+                    style="@style/CountdownViewStyle"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <com.sxs.tools.view.ClearEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:text="这是一个带清除的按钮的EditText" />
+
+
+            <com.sxs.tools.view.PasswordEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:text="19960929" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入手机号（只能以 1 开头）"
+                app:regexType="mobile" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入中文（普通的中文字符）"
+                app:regexType="chinese" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入英文（大写和小写的英文）"
+                app:regexType="english" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入数量（非 0 开头的数字）"
+                app:regexType="count" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入用户名（中文、英文、数字）"
+                app:regexType="name" />
+
+            <com.sxs.tools.view.RegexEditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:hint="这里只能输入非空格的字符"
+                app:regexType="nonnull" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="这是一条华丽的分割线" />
+
+            <View style="@style/HorizontalLineStyle" />
 
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

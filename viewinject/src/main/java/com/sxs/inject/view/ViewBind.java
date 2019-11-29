@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 /**
  * @Author: shearson
  * @time: 2019/11/27 15:21
- * @des: java类作用描述
+ * @des: java类作用描述  暂时只能支持在activity中使用
  */
 public class ViewBind {
 

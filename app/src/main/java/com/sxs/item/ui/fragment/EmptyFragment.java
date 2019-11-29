@@ -14,6 +14,7 @@ import com.sxs.item.common.BaseFragment;
  */
 public class EmptyFragment extends BaseFragment {
 
+
     @Override
     protected int initLayout() {
         return R.layout.fragment_empty;

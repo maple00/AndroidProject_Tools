@@ -32,5 +32,14 @@ dependencies {
     // 沉浸式状态栏
     implementation project(path: ':statusBarLibrary')
     // 工具类
-    implementation project(path: ":tools")
+    implementation project(path: ':tools')
+    // 土司
+    implementation project(path: ':toast')
+    // 权限 https://www.jianshu.com/p/338741725cd0?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+    implementation project(path: ':permission')
+
+    // 图片加载框架：https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
 }

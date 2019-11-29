@@ -44,6 +44,11 @@
             </intent-filter>
         </activity>
 
+        <!-- 对话框案例 -->
+        <activity
+            android:name=".ui.activity.DialogActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
 
 
     </application>
