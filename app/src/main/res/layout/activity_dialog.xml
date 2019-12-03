@@ -122,13 +122,13 @@
                 android:layout_marginTop="30dp"
                 android:text="弹出更新对话框" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <!--<androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_share"
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="弹出分享对话框" />
+                android:text="弹出分享对话框" />-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_custom"

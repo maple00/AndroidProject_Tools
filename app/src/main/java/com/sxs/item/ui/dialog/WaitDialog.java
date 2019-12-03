@@ -1,0 +1,45 @@
+package com.sxs.item.ui.dialog;
+
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.StringRes;
+import androidx.fragment.app.FragmentActivity;
+
+import com.sxs.item.R;
+import com.sxs.item.common.BaseDialogFragment;
+import com.sxs.item.other.BaseDialog;
+
+/**
+ * @Author: shearson
+ * @time: 2019/12/3 10:37
+ * @des: 等待加载对话框 重写了进度条控件
+ */
+public class WaitDialog {
+
+    public static final class Builder
+            extends BaseDialogFragment.Builder<Builder> {
+
+        private final TextView mMessageView;
+
+        public Builder(FragmentActivity activity) {
+            super(activity);
+            setContentView(R.layout.dialog_wait);
+            setAnimStyle(BaseDialog.AnimStyle.TOAST);
+            setBackgroundDimEnabled(false);
+            setCancelable(false);
+
+            mMessageView = findViewById(R.id.tv_wait_message);
+        }
+
+        public Builder setMessage(@StringRes int id) {
+            return setMessage(getString(id));
+        }
+
+        public Builder setMessage(CharSequence text) {
+            mMessageView.setText(text);
+            mMessageView.setVisibility(text == null ? View.GONE : View.VISIBLE);
+            return this;
+        }
+    }
+}

@@ -3,6 +3,9 @@ package com.sxs.item.common;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
@@ -138,7 +141,33 @@ public abstract class BaseActivity extends AppCompatActivity {
         ToastUtils.show(object);
     }
 
+    /**
+     * 延迟执行
+     */
+    private static final Handler HANDLER = new Handler(Looper.getMainLooper());
+    public final Object mHandlerToken = hashCode();
 
+    public final boolean post(Runnable r) {
+        return postDelayed(r, 0);
+    }
+
+    /**
+     * 延迟一段时间执行
+     */
+    public final boolean postDelayed(Runnable r, long delayMillis) {
+        if (delayMillis < 0) {
+            delayMillis = 0;
+        }
+        return postAtTime(r, SystemClock.uptimeMillis() + delayMillis);
+    }
+
+    /**
+     * 在指定的时间执行
+     */
+    public final boolean postAtTime(Runnable r, long uptimeMillis) {
+        // 发送和这个 Activity 相关的消息回调
+        return HANDLER.postAtTime(r, mHandlerToken, uptimeMillis);
+    }
 
 
     @Override
