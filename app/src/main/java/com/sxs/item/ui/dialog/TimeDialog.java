@@ -19,7 +19,7 @@ import java.util.Calendar;
  * @time: 2019/12/3 13:17
  * @des: 时间对话框
  */
-public class TimeDialog {
+public final class TimeDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

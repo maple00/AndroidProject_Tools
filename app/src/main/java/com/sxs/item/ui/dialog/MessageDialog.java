@@ -15,7 +15,7 @@ import com.sxs.item.other.BaseDialog;
  * @time: 2019/11/29 16:37
  * @des: 重写 消息对话框
  */
-public class MessageDialog {
+public final class MessageDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

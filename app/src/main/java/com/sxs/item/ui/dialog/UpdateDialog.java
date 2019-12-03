@@ -35,7 +35,7 @@ import java.util.List;
  * @time: 2019/12/3 13:26
  * @des: 更新升级对话框
  */
-public class UpdateDialog {
+public final class UpdateDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

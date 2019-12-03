@@ -38,7 +38,7 @@ import java.util.List;
  * @time: 2019/12/3 11:41
  * @des: 省市区选择对话框
  */
-public class AddressDialog {
+public final class AddressDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

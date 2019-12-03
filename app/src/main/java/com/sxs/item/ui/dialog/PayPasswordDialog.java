@@ -27,7 +27,7 @@ import java.util.LinkedList;
  * @time: 2019/12/3 11:17
  * @des: 支付密码对话框
  */
-public class PayPasswordDialog {
+public final class PayPasswordDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

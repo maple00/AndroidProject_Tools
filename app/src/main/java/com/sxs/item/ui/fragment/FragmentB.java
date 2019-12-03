@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
+import com.sxs.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -21,7 +22,12 @@ public class FragmentB extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-
+        // 设置状态栏透明
+        StatusBarUtil.setTranslucentStatus(getActivity());
+        if (!StatusBarUtil.setStatusBarDarkTheme(getActivity(), true)) {
+            // 如果不支持设置深灰色风格，为了兼容，则设置状态栏颜色半透明
+            StatusBarUtil.setStatusBarColor(getActivity(), 0x55000000);
+        }
     }
 
     @Override

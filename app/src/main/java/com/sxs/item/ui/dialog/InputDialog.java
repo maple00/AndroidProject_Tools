@@ -17,7 +17,7 @@ import com.sxs.item.other.BaseDialog;
  * @time: 2019/12/3 9:32
  * @des: 输入对话框
  */
-public class InputDialog {
+public final class InputDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

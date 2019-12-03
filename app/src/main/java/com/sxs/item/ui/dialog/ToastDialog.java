@@ -15,7 +15,7 @@ import com.sxs.item.other.BaseDialog;
  * @time: 2019/12/3 10:12
  * @des: Toast 效果对话框
  */
-public class ToastDialog {
+public final class ToastDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

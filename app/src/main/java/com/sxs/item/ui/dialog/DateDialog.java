@@ -22,7 +22,7 @@ import java.util.Locale;
  * @time: 2019/12/3 11:51
  * @des: 日期对话框
  */
-public class DateDialog {
+public final class DateDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>

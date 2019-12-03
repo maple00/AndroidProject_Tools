@@ -15,7 +15,7 @@ import com.sxs.item.other.BaseDialog;
  * @time: 2019/12/3 10:37
  * @des: 等待加载对话框 重写了进度条控件
  */
-public class WaitDialog {
+public final class WaitDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder> {

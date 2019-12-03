@@ -2,12 +2,16 @@ package com.sxs.item.common;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.Window;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.sxs.inject.view.ViewBind;
 import com.sxs.item.R;
 import com.sxs.item.helper.ActivityStackManager;
+import com.sxs.item.other.StatusManager;
 import com.sxs.statusbar.StatusBarUtil;
 import com.sxs.toast.ToastUtils;
 
@@ -100,7 +105,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化数据
      */
-    protected void initData() {
+    protected void initData() { }
+
+    /**
+     * 获取当前 Activity 对象
+     */
+    public BaseActivity getActivity() {
+        return this;
     }
 
     @Override
@@ -169,21 +180,64 @@ public abstract class BaseActivity extends AppCompatActivity {
         return HANDLER.postAtTime(r, mHandlerToken, uptimeMillis);
     }
 
-
     @Override
     protected void onDestroy() {
         ActivityStackManager.getInstance().removeActivity(this);
         super.onDestroy();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public ViewGroup getContentView() {
+        return findViewById(Window.ID_ANDROID_CONTENT);
+    }
+
+
+    private final StatusManager mStatusManager = new StatusManager();
+
+    /**
+     * 显示加载中
+     */
+    public void showLoading() {
+        mStatusManager.showLoading(this);
+    }
+
+    public void showLoading(@StringRes int id) {
+        mStatusManager.showLoading(this, getString(id));
+    }
+
+    public void showLoading(CharSequence text) {
+        mStatusManager.showLoading(this, text);
+    }
+
+    /**
+     * 显示加载完成
+     */
+    public void showComplete() {
+        mStatusManager.showComplete();
+    }
+
+    /**
+     * 显示空提示
+     */
+    public void showEmpty() {
+        mStatusManager.showEmpty(getContentView());
+    }
+
+    /**
+     * 显示错误提示
+     */
+    public void showError() {
+        mStatusManager.showError(getContentView());
+    }
+
+    /**
+     * 显示自定义提示
+     */
+    public void showLayout(@DrawableRes int drawableId, @StringRes int stringId) {
+        mStatusManager.showLayout(getContentView(), drawableId, stringId);
+    }
+
+    public void showLayout(Drawable drawable, CharSequence hint) {
+        mStatusManager.showLayout(getContentView(), drawable, hint);
     }
 
 }

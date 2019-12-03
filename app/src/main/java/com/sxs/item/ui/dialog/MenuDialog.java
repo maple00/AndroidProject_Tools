@@ -27,7 +27,7 @@ import java.util.List;
  * @time: 2019/12/3 9:43
  * @des: 菜单选择框
  */
-public class MenuDialog {
+public final class MenuDialog {
 
     public static final class Builder
             extends BaseDialogFragment.Builder<Builder>
