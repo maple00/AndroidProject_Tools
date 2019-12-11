@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">AndroidProject模板</string>
-
+    <!-- Http-->
+    <string name="frame_name">AndroidOHP</string>
+    <string name="package_name">081E222B201T82W083Z224I244Q221N222E204C244</string>
     <!-- 通用的 -->
+    <string name="common_action_title">标题</string>
     <string name="common_phone_input_hint">输入手机号码</string>
     <string name="common_phone_input_error">手机号输入不正确</string>
 
@@ -164,17 +167,5 @@
     <string name="crash_error_info">错误信息</string>
     <string name="crash_copy_log">复制日志</string>
     <string name="crash_close">关闭</string>
-
-    <!-- 图片选择 -->
-    <string name="photo_title">图片选择</string>
-    <string name="photo_all">所有图片</string>
-
-    <string name="photo_total">共 %d 张</string>
-
-    <string name="photo_max_hint">本次最多只能选择 %d 张图片</string>
-
-    <string name="photo_launch_fail">无法启动相机</string>
-    <string name="photo_picture_error">图片错误</string>
-
 
 </resources>

@@ -7,33 +7,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
-import com.sxs.statusbar.StatusBarUtil;
-import com.sxs.toast.ToastUtils;
+import com.sxs.tools.statusbar.StatusBarUtil;
+import com.sxs.tools.toast.ToastUtils;
 
 /**
  * @Author: shearson
  * @time: 2019/11/27 11:31
  * @des: Fragment 基类
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<A extends BaseActivity> extends Fragment {
 
     //获取TAG的fragment名称
     protected final String TAG = this.getClass().getSimpleName();
 
-    /** 全局ViewGroup*/
+    /**
+     * 全局ViewGroup
+     */
     private ViewGroup rootView;
 
-    /** 状态栏 */
+    /**
+     * 状态栏
+     */
     private View mStatusBarView;
 
-    /** 上下文对象 */
+    /**
+     * 上下文对象
+     */
     public Context mContext;
 
     @Override

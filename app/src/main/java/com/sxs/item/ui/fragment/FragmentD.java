@@ -7,7 +7,8 @@ import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
 import com.sxs.item.ui.activity.DialogActivity;
 import com.sxs.item.ui.activity.StatusActivity;
-import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.item.ui.activity.TripartiteActivity;
+import com.sxs.tools.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -36,6 +37,8 @@ public class FragmentD extends BaseFragment implements View.OnClickListener {
         view.findViewById(R.id.btn_dialog_surface).setOnClickListener(this);
         // 界面状态
         view.findViewById(R.id.btn_surface_hint).setOnClickListener(this);
+        // 三方集成界面
+        view.findViewById(R.id.btn_tripartite).setOnClickListener(this);
     }
 
     @Override
@@ -45,13 +48,19 @@ public class FragmentD extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btn_dialog_surface:
+        switch (view.getId()) {
+            case R.id.btn_dialog_surface:   // 对话框使用案例
                 startActivity(DialogActivity.class);
                 break;
-            case R.id.btn_surface_hint:
+            case R.id.btn_surface_hint: // 页面状态布局(网络错误，异常错误，空数据等)
                 startActivity(StatusActivity.class);
                 break;
+            case R.id.btn_tripartite:   // 三方集成界面
+                startActivity(TripartiteActivity.class);
+                break;
+
         }
     }
+
+
 }

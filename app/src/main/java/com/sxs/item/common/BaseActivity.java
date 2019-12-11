@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
 
@@ -16,12 +15,12 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.sxs.inject.view.ViewBind;
 import com.sxs.item.R;
 import com.sxs.item.helper.ActivityStackManager;
 import com.sxs.item.other.StatusManager;
-import com.sxs.statusbar.StatusBarUtil;
-import com.sxs.toast.ToastUtils;
+import com.sxs.tools.statusbar.StatusBarUtil;
+import com.sxs.tools.toast.ToastUtils;
+import com.sxs.tools.viewinject.ViewBind;
 
 /**
  * @Author: shearson
@@ -34,9 +33,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);      //禁止横屏
         super.onCreate(savedInstanceState);
+        // 初始化布局
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
         }
+        // 初始化数据
         init();
     }
 
@@ -105,7 +106,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化数据
      */
-    protected void initData() { }
+    protected void initData() {
+    }
 
     /**
      * 获取当前 Activity 对象
@@ -113,6 +115,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public BaseActivity getActivity() {
         return this;
     }
+
 
     @Override
     public void startActivity(Intent intent) {

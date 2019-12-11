@@ -7,8 +7,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
-import com.sxs.toast.ToastUtils;
 import com.sxs.tools.base.BaseRecyclerViewAdapter;
+import com.sxs.tools.toast.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,15 +18,23 @@ import java.util.List;
  * @time: 2019/12/3 9:47
  * @des: 项目中的 RecycleView 适配器基类
  */
-public abstract class BaseRecyclerViewAdapters <T> extends BaseRecyclerViewAdapter<BaseRecyclerViewAdapters.ViewHolder>  {
+public abstract class BaseRecyclerViewAdapters<T> extends BaseRecyclerViewAdapter<BaseRecyclerViewAdapters.ViewHolder> {
 
-    /** 列表数据 */
+    /**
+     * 列表数据
+     */
     private List<T> mDataSet;
-    /** 当前列表的页码，默认为第一页，用于分页加载功能 */
+    /**
+     * 当前列表的页码，默认为第一页，用于分页加载功能
+     */
     private int mPageNumber = 1;
-    /** 是否是最后一页，默认为false，用于分页加载功能 */
+    /**
+     * 是否是最后一页，默认为false，用于分页加载功能
+     */
     private boolean mLastPage;
-    /** 标记对象 */
+    /**
+     * 标记对象
+     */
     private Object mTag;
 
     public BaseRecyclerViewAdapters(Context context) {
@@ -221,6 +229,7 @@ public abstract class BaseRecyclerViewAdapters <T> extends BaseRecyclerViewAdapt
         }
 
         @Override
-        public void onBindView(int position) {}
+        public void onBindView(int position) {
+        }
     }
 }

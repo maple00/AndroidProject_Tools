@@ -7,6 +7,8 @@
     tools:context=".ui.activity.DialogActivity"
     tools:ignore="HardcodedText">
 
+    <include layout="@layout/activity_action"/>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

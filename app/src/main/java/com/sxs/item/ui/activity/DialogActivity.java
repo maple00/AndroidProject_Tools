@@ -3,7 +3,9 @@ package com.sxs.item.ui.activity;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.sxs.item.R;
 import com.sxs.item.common.BaseActivity;
@@ -19,6 +21,7 @@ import com.sxs.item.ui.dialog.TimeDialog;
 import com.sxs.item.ui.dialog.ToastDialog;
 import com.sxs.item.ui.dialog.UpdateDialog;
 import com.sxs.item.ui.dialog.WaitDialog;
+import com.sxs.tools.viewinject.ViewById;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,6 +41,8 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void initView() {
+        // 页面返回
+        findViewById(R.id.btn_back).setOnClickListener(this);
         // 消息对话框
         this.findViewById(R.id.btn_dialog_message).setOnClickListener(this);
         // 弹出输入对话框
@@ -68,9 +73,21 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
         this.findViewById(R.id.btn_dialog_custom).setOnClickListener(this);
     }
 
+    @ViewById(R.id.tv_title)
+    private TextView mTitle;
+
+    @Override
+    protected void initData() {
+        super.initData();
+        mTitle.setText("对话框的使用");
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_back: // 页面返回
+                finish();
+                break;
             case R.id.btn_dialog_message:
                 new MessageDialog.Builder(this)
                         // 标题可以不用填写
@@ -376,4 +393,5 @@ public class DialogActivity extends BaseActivity implements View.OnClickListener
                 break;
         }
     }
+
 }

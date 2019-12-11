@@ -32,6 +32,14 @@
                 android:layout_marginTop="30dp"
                 android:text="点我进入界面状态案例" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_tripartite"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="点我进入三方集成案例" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

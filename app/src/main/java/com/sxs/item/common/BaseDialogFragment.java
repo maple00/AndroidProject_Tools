@@ -6,9 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.FragmentActivity;
 
-import com.sxs.inject.view.ViewBind;
 import com.sxs.item.other.MyDialogFragment;
-import com.sxs.toast.ToastUtils;
+import com.sxs.tools.toast.ToastUtils;
+import com.sxs.tools.viewinject.ViewBind;
 
 /**
  * @Author: shearson

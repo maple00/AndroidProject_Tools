@@ -16,9 +16,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 安装包的权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Wifi  管理状态-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
-        android:name=".common.MyApplication"
+        android:name=".common.BaseApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -44,6 +46,12 @@
             </intent-filter>
         </activity>
 
+        <!-- 崩溃捕捉页面 CrashActivity-->
+        <activity
+            android:name=".ui.activity.CrashActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
         <!-- 对话框案例 -->
         <activity
             android:name=".ui.activity.DialogActivity"
@@ -53,6 +61,18 @@
         <!-- 界面状态案例-->
         <activity
             android:name=".ui.activity.StatusActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <!-- 三方集成案例-->
+        <activity
+            android:name=".ui.activity.TripartiteActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <!-- 个推集成 GeTuiActivity-->
+        <activity
+            android:name=".ui.activity.GeTuiActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
 

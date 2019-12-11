@@ -22,9 +22,9 @@ import androidx.fragment.app.FragmentActivity;
 import com.sxs.item.R;
 import com.sxs.item.common.BaseDialogFragment;
 import com.sxs.item.other.BaseDialog;
-import com.sxs.permission.OnPermission;
-import com.sxs.permission.Permission;
-import com.sxs.permission.XXPermissions;
+import com.sxs.tools.permission.OnPermission;
+import com.sxs.tools.permission.Permission;
+import com.sxs.tools.permission.XXPermissions;
 import com.sxs.tools.widget.NumberProgressBar;
 
 import java.io.File;
@@ -51,13 +51,19 @@ public final class UpdateDialog {
         private ViewGroup mCancelLayout;
         private View mCloseView;
 
-        /** 下载地址 */
+        /**
+         * 下载地址
+         */
         private String mDownloadUrl;
 
-        /** 当前下载状态 */
+        /**
+         * 当前下载状态
+         */
         private int mDownloadStatus = -1;
 
-        /** 下载处理对象 */
+        /**
+         * 下载处理对象
+         */
         private DownloadHandler mDownloadHandler;
 
         public Builder(FragmentActivity activity) {
@@ -225,7 +231,7 @@ public final class UpdateDialog {
 
                 mDownloadHandler = new DownloadHandler(getActivity());
                 mDownloadHandler.setDownloadListener(this);
-                if (!mDownloadHandler.createDownload(mDownloadUrl,  getString(R.string.app_name) +
+                if (!mDownloadHandler.createDownload(mDownloadUrl, getString(R.string.app_name) +
                         " " + mNameView.getText().toString() + ".apk", null)) {
                     mUpdateView.setText(R.string.update_download_fail);
                 } else {
@@ -247,18 +253,28 @@ public final class UpdateDialog {
 
         private final Context mContext;
 
-        /** 下载管理器对象 */
+        /**
+         * 下载管理器对象
+         */
         private final DownloadManager mDownloadManager;
-        /** 下载内容观察者 */
+        /**
+         * 下载内容观察者
+         */
         private DownloadObserver mDownloadObserver;
 
-        /** 下载文件 id */
+        /**
+         * 下载文件 id
+         */
         private long mDownloadId;
 
-        /** 下载监听 */
+        /**
+         * 下载监听
+         */
         private OnDownloadListener mListener;
 
-        /** 下载的文件 */
+        /**
+         * 下载的文件
+         */
         private File mDownloadFile;
 
         private DownloadHandler(Context context) {
@@ -306,10 +322,10 @@ public final class UpdateDialog {
         /**
          * 创建下载任务
          *
-         * @param downloadUrl           下载地址
-         * @param fileName              文件命名
-         * @param notificationTitle     通知栏标题
-         * @return                      下载 id
+         * @param downloadUrl       下载地址
+         * @param fileName          文件命名
+         * @param notificationTitle 通知栏标题
+         * @return 下载 id
          */
         @SuppressWarnings("ResultOfMethodCallIgnored")
         private boolean createDownload(String downloadUrl, String fileName, String notificationTitle) {
@@ -395,7 +411,7 @@ public final class UpdateDialog {
         /**
          * 每当 /data/data/com.android.providers.download/database/database.db 变化后就会触发onChange方法
          *
-         * @param selfChange        是否是当前应用自己操作了数据库
+         * @param selfChange 是否是当前应用自己操作了数据库
          */
         @Override
         public void onChange(boolean selfChange) {

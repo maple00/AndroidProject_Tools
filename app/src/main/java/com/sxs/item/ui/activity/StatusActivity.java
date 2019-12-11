@@ -79,4 +79,6 @@ public class StatusActivity extends BaseActivity implements View.OnClickListener
                 break;
         }
     }
+
+
 }

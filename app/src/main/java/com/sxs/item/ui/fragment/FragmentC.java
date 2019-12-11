@@ -2,7 +2,6 @@ package com.sxs.item.ui.fragment;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -11,10 +10,10 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
-import com.sxs.permission.OnPermission;
-import com.sxs.permission.Permission;
-import com.sxs.permission.XXPermissions;
-import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.tools.permission.OnPermission;
+import com.sxs.tools.permission.Permission;
+import com.sxs.tools.permission.XXPermissions;
+import com.sxs.tools.statusbar.StatusBarUtil;
 
 import java.util.List;
 import java.util.Random;
@@ -119,7 +118,7 @@ public class FragmentC extends BaseFragment implements View.OnClickListener {
 
                             @Override
                             public void noPermission(List<String> denied, boolean quick) {
-                                if(quick) {
+                                if (quick) {
                                     toast("被永久拒绝授权，请手动授予权限");
                                     //如果是被永久拒绝就跳转到应用权限系统设置页面
                                     XXPermissions.gotoPermissionSettings(getActivity());
@@ -142,4 +141,6 @@ public class FragmentC extends BaseFragment implements View.OnClickListener {
                 break;
         }
     }
+
+
 }

@@ -2,15 +2,11 @@ package com.sxs.item.ui.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Build;
-import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
-import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.tools.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -35,5 +31,6 @@ public class FragmentA extends BaseFragment {
     protected void initData(Context mContext) {
 
     }
+
 
 }

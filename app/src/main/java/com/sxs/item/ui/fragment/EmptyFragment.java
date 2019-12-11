@@ -29,4 +29,6 @@ public class EmptyFragment extends BaseFragment {
     protected void initData(Context mContext) {
 
     }
+
+
 }

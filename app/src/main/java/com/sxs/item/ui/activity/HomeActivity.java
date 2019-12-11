@@ -1,8 +1,8 @@
 package com.sxs.item.ui.activity;
 
 import android.os.Build;
-import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
-import com.sxs.inject.view.ViewById;
 import com.sxs.item.R;
 import com.sxs.item.common.BaseActivity;
 import com.sxs.item.helper.BottomNavigationViewHelper;
@@ -19,7 +18,8 @@ import com.sxs.item.ui.fragment.FragmentA;
 import com.sxs.item.ui.fragment.FragmentB;
 import com.sxs.item.ui.fragment.FragmentC;
 import com.sxs.item.ui.fragment.FragmentD;
-import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.tools.statusbar.StatusBarUtil;
+import com.sxs.tools.viewinject.ViewById;
 
 /**
  * @Author: shearson
@@ -48,11 +48,11 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         mBottomNavigationView.setItemIconTintList(null);
         // 取消底部导航栏的动画效果, 如果sdk版本小于28则调用方法，大于28则设置属性
         // msg：调用设置没有效果
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             // 设置属性
             mBottomNavigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
             mBottomNavigationView.setItemHorizontalTranslationEnabled(false);
-        }else {
+        } else {
             BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
         }
 
@@ -104,6 +104,8 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         transaction.replace(R.id.fragment_empty, fragment);
         transaction.commit();
     }
+
+
 
     /**
      * 当BottonNavigationBar 的items大于三个时

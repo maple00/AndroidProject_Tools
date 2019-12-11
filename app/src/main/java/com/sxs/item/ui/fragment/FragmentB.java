@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.sxs.item.R;
 import com.sxs.item.common.BaseFragment;
-import com.sxs.statusbar.StatusBarUtil;
+import com.sxs.tools.statusbar.StatusBarUtil;
 
 /**
  * @Author: shearson
@@ -34,4 +34,6 @@ public class FragmentB extends BaseFragment {
     protected void initData(Context mContext) {
 
     }
+
+
 }
