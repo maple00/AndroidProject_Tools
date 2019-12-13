@@ -33,7 +33,7 @@ public class TripartiteActivity extends BaseActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.btn_getui_integration:
-
+                openActivity(GeTuiActivity.class);
                 break;
             default:
                 break;
