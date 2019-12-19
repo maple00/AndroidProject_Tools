@@ -1,2 +1,2 @@
-include ':app', ':tools'
+include ':app', ':tools', ':uikit'
 rootProject.name='AndroidProject_Tools'

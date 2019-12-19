@@ -12,7 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseActivity;
+import com.sxs.item.base.BaseActivity;
 
 import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 import cat.ereza.customactivityoncrash.config.CaocConfig;

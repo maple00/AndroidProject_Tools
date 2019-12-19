@@ -3,13 +3,12 @@ package com.sxs.item.ui.activity;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseActivity;
-import com.sxs.item.common.BaseDialogFragment;
+import com.sxs.item.base.BaseActivity;
+import com.sxs.item.base.BaseDialogFragment;
 import com.sxs.item.other.BaseDialog;
 import com.sxs.item.ui.dialog.AddressDialog;
 import com.sxs.item.ui.dialog.DateDialog;

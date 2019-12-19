@@ -1,4 +1,4 @@
-package com.sxs.item.common;
+package com.sxs.item.base;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;

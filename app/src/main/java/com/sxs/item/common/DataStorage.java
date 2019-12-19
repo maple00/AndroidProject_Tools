@@ -1,4 +1,4 @@
-package com.sxs.item.utils;
+package com.sxs.item.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;

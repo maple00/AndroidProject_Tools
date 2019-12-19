@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.view.View;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseFragment;
+import com.sxs.item.base.BaseFragment;
 import com.sxs.tools.statusbar.StatusBarUtil;
 
 /**

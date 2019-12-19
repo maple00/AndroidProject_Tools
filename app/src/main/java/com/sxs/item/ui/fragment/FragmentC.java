@@ -9,7 +9,7 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.sxs.item.R;
-import com.sxs.item.common.BaseFragment;
+import com.sxs.item.base.BaseFragment;
 import com.sxs.tools.permission.OnPermission;
 import com.sxs.tools.permission.Permission;
 import com.sxs.tools.permission.XXPermissions;
@@ -96,7 +96,7 @@ public class FragmentC extends BaseFragment implements View.OnClickListener {
                         .into(mImageView);
                 break;
             case R.id.btn_choose_img:
-                toast("暂没实现");
+                toast("暂未实现");
                 break;
             case R.id.btn_request_permission:
                 XXPermissions.with(getActivity())

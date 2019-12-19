@@ -9,7 +9,7 @@ import androidx.annotation.StringRes;
 import androidx.fragment.app.FragmentActivity;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseDialogFragment;
+import com.sxs.item.base.BaseDialogFragment;
 import com.sxs.item.other.BaseDialog;
 
 /**

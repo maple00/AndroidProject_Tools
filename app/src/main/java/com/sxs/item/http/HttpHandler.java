@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import com.sxs.item.common.BaseApplication;
+import com.sxs.item.base.BaseApplication;
 
 /**
  * Created by Relin

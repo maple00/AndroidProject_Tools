@@ -20,7 +20,7 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.FragmentActivity;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseDialogFragment;
+import com.sxs.item.base.BaseDialogFragment;
 import com.sxs.item.other.BaseDialog;
 import com.sxs.tools.permission.OnPermission;
 import com.sxs.tools.permission.Permission;

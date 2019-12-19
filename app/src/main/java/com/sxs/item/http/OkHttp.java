@@ -2,7 +2,7 @@ package com.sxs.item.http;
 
 import android.text.TextUtils;
 
-import com.sxs.item.common.BaseApplication;
+import com.sxs.item.base.BaseApplication;
 import com.sxs.item.json.JsonParser;
 
 import java.io.File;

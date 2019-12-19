@@ -10,12 +10,36 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // 个推的APIKey
+        manifestPlaceholders = [
+                GETUI_APP_ID : "ZSbrQRioHm9oZuhoeit694",
+                GETUI_APP_KEY : "q82WD47UpH8eCejfLS0B04",
+                GETUI_APP_SECRET : "ksldCR4QdhAWrKRaqoPdo9"
+        ]
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "armeabi-v7a", "x86","arm64-v8a","x86_64"
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
     }
 }
 
@@ -32,13 +56,34 @@ dependencies {
     // EventBus 事件总线：https://github.com/greenrobot/EventBus
     implementation "org.greenrobot:eventbus:3.1.1"
     // 图片加载框架：https://github.com/bumptech/glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
     // 本地异常捕捉框架：https://github.com/Ereza/CustomActivityOnCrash
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
 
     // OKHttp 框架加载
     implementation files('libs/okhttp-3.10.0.jar')
     implementation files('libs/okio-1.14.0.jar')
+
+    // 个推
+    implementation 'com.getui:sdk:2.13.3.0'
+    // 网易云信
+    // 添加依赖。注意，版本号必须一致。
+    // 基础功能 (必需)
+    // implementation 'com.netease.nimlib:basesdk:6.1.1'
+    // 导入云信的聊天界面
+    implementation project(path: ':uikit')
+    // 音视频和互动白板服务需要
+    //implementation 'com.netease.nimlib:nrtc:6.1.1'
+    // 音视频需要
+    //implementation 'com.netease.nimlib:avchat:6.1.1'
+    // 聊天室需要
+    //implementation 'com.netease.nimlib:chatroom:6.1.1'
+    // 互动白板服务需要
+   // implementation 'com.netease.nimlib:rts:6.1.1'
+    // 全文检索服务需要
+    //implementation 'com.netease.nimlib:lucene:6.1.1'
+    // 小米、华为、魅族、fcm 推送
+    //implementation 'com.netease.nimlib:push:6.1.1'
+
 }

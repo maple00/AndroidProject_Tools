@@ -2,9 +2,9 @@ package com.sxs.item.http;
 
 import android.util.Log;
 
-import com.sxs.item.common.BaseApplication;
+import com.sxs.item.base.BaseApplication;
 import com.sxs.item.json.JsonParser;
-import com.sxs.item.utils.DataStorage;
+import com.sxs.item.common.DataStorage;
 import com.sxs.item.utils.ListUtils;
 
 import java.io.Serializable;

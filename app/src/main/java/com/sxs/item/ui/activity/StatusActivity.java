@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseActivity;
+import com.sxs.item.base.BaseActivity;
 import com.sxs.item.other.BaseDialog;
 import com.sxs.item.ui.dialog.MenuDialog;
 

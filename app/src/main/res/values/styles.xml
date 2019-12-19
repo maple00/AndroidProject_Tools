@@ -169,4 +169,9 @@
         <item name="android:windowExitAnimation">@anim/dialog_right_out</item>
     </style>
 
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/gainsboro</item>
+        <item name="colorControlActivated">@color/deepskyblue</item>
+    </style>
+
 </resources>

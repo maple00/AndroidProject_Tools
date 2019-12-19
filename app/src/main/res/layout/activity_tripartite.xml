@@ -25,6 +25,22 @@
                 android:layout_marginTop="30dp"
                 android:text="个推集成Demo" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_wangyiyun_integration"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="网易云集成Demo" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_read_ol"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="文件在线预览Demo" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -1,4 +1,4 @@
-package com.sxs.item.common;
+package com.sxs.item.base;
 
 import android.app.Activity;
 import android.content.Context;

@@ -2,7 +2,6 @@ package com.sxs.item.ui.activity;
 
 import android.os.Build;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -12,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.sxs.item.R;
-import com.sxs.item.common.BaseActivity;
+import com.sxs.item.base.BaseActivity;
 import com.sxs.item.helper.BottomNavigationViewHelper;
 import com.sxs.item.ui.fragment.FragmentA;
 import com.sxs.item.ui.fragment.FragmentB;

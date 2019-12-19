@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseDialogFragment;
-import com.sxs.item.common.BaseRecyclerViewAdapters;
+import com.sxs.item.base.BaseDialogFragment;
+import com.sxs.item.base.BaseRecyclerViewAdapters;
 import com.sxs.item.other.BaseDialog;
 import com.sxs.tools.base.BaseRecyclerViewAdapter;
 

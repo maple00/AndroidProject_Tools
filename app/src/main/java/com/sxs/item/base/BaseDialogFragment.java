@@ -1,4 +1,4 @@
-package com.sxs.item.common;
+package com.sxs.item.base;
 
 import android.view.View;
 
@@ -26,7 +26,7 @@ public class BaseDialogFragment {
 
         @Override
         public B setContentView(@NonNull View view) {
-            // 使用 ButterKnife 注解
+            // 使用 View 注解
             ViewBind.inject(this.getActivity());
             return super.setContentView(view);
         }

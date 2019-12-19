@@ -1,4 +1,4 @@
-package com.sxs.item.utils;
+package com.sxs.item.common;
 
 import android.app.Notification;
 import android.content.AsyncQueryHandler;

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import com.sxs.item.R;
-import com.sxs.item.common.BaseRecyclerViewAdapters;
+import com.sxs.item.base.BaseRecyclerViewAdapters;
 
 /**
  * @Author: shearson
