@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
 
@@ -241,6 +242,26 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void showLayout(Drawable drawable, CharSequence hint) {
         mStatusManager.showLayout(getContentView(), drawable, hint);
+    }
+
+    private static int rebackFlag = -1;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+       /* if (keyCode == KeyEvent.KEYCODE_BACK) {         // 回到Home页
+            if (rebackFlag < 0){
+                toast("再按一次退出到桌面");
+                rebackFlag++;
+                return false;
+            }else {
+                rebackFlag = -1;
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(intent);
+                return true;
+            }
+        }*/
+        return super.onKeyDown(keyCode, event);
     }
 
 }

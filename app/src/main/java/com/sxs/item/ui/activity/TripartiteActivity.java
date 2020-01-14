@@ -1,5 +1,6 @@
 package com.sxs.item.ui.activity;
 
+import android.Manifest;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +11,9 @@ import com.sxs.tools.permission.Permission;
 import com.sxs.tools.permission.XXPermissions;
 import com.sxs.tools.viewinject.ViewById;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: a797s
@@ -81,6 +84,30 @@ public class TripartiteActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.btn_read_ol:
                 toast("待完成");
+                XXPermissions.with(this)
+                        .constantRequest()
+                        .permission(Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE)
+                        .request(new OnPermission() {
+                            @Override
+                            public void hasPermission(List<String> granted, boolean isAll) {
+                                if (isAll) {
+                                    toast("获取权限成功");
+                                    openActivity(TbsActivity.class);
+                                } else {
+                                    toast("获取权限成功，部分权限未正常授予");
+                                }
+                            }
+                            @Override
+                            public void noPermission(List<String> denied, boolean quick) {
+                                if (quick) {
+                                    toast("被永久拒绝授权，请手动授予权限");
+                                    //如果是被永久拒绝就跳转到应用权限系统设置页面
+                                    XXPermissions.gotoPermissionSettings(getActivity());
+                                } else {
+                                    toast("获取权限失败");
+                                }
+                            }
+                        });
                 break;
             default:
                 break;

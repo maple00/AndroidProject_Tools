@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sxs.item">
 
-
     <!-- 外部存储读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -20,6 +19,11 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <!-- Wifi  管理状态-->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 日历读写权限-->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+
     <!-- 8.0 系统需要-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <!-- 支持iBeancon 需要蓝牙权限 -->
@@ -123,6 +127,7 @@
             android:process=":pushservice">
         </service>
 
+        <!-- 文件在线预览 FileDisplayActivity-->
 
         <!-- 网易云集成Demo WangyiYunActivity-->
 
@@ -180,6 +185,18 @@
             android:authorities="com.sxs.item.ipc.provider"
             android:exported="false"
             android:process=":core" />
+
+        <!-- TBS 集成 TbsActivity-->
+        <activity
+            android:name=".ui.activity.TbsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <!-- 内容提供者 provider-->
+        <activity
+            android:name=".ui.activity.ContentProvider"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
 
     </application>
 

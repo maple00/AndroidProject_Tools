@@ -8,6 +8,7 @@ import com.sxs.item.base.BaseFragment;
 import com.sxs.item.ui.activity.DialogActivity;
 import com.sxs.item.ui.activity.StatusActivity;
 import com.sxs.item.ui.activity.TripartiteActivity;
+import com.sxs.item.ui.activity.provide.CalendarProvider;
 import com.sxs.tools.statusbar.StatusBarUtil;
 
 /**
@@ -39,6 +40,8 @@ public class FragmentD extends BaseFragment implements View.OnClickListener {
         view.findViewById(R.id.btn_surface_hint).setOnClickListener(this);
         // 三方集成界面
         view.findViewById(R.id.btn_tripartite).setOnClickListener(this);
+        // 内容提供者 provide
+        view.findViewById(R.id.btn_provide).setOnClickListener(this);
     }
 
     @Override
@@ -58,7 +61,9 @@ public class FragmentD extends BaseFragment implements View.OnClickListener {
             case R.id.btn_tripartite:   // 三方集成界面
                 startActivity(TripartiteActivity.class);
                 break;
-
+            case R.id.btn_provide:
+                startActivity(CalendarProvider.class);
+                break;
         }
     }
 

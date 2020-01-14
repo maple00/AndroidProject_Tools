@@ -40,6 +40,14 @@
                 android:layout_marginTop="30dp"
                 android:text="点我进入三方集成案例" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_provide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ButtonStyle"
+                android:layout_marginTop="30dp"
+                android:text="内容提供者provide"/>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

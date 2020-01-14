@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
+        android:id="@+id/btn_calendar"
+        android:text="日历添加提醒事件"
+        android:layout_marginTop="30dp"
+        android:onClick="addAlertEvents"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_calendar"
+        style="@style/ButtonStyle"
+        android:layout_marginTop="30dp"
+        android:text="获取联系人信息"
+        android:onClick="getContactsInfo"/>
+
+</RelativeLayout>

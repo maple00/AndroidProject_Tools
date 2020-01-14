@@ -475,26 +475,4 @@ public class GeTuiActivity extends BaseActivity implements View.OnClickListener 
         super.onStop();
     }
 
-    private static int rebackFlag = -1;
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {         // 回到Home页
-            if (rebackFlag < 0){
-                toast("再摁一次退出到桌面");
-                rebackFlag++;
-                return false;
-                // openActivity(GeTuiActivity.class);
-            }else {
-                rebackFlag = -1;
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                startActivity(intent);
-                return true;
-            }
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
 }

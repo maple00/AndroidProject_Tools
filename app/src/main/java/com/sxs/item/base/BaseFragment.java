@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,38 +131,6 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment {
 
     public void startActivity(Class<? extends Activity> cls) {
         startActivity(new Intent(mContext, cls));
-    }
-
-    /**
-     * 保证同一按钮在1秒内只响应一次点击事件
-     */
-    public abstract class OnSingleClickListener implements View.OnClickListener {
-        //两次点击按钮的最小间隔，目前为1000
-        private static final int MIN_CLICK_DELAY_TIME = 1000;
-        private long lastClickTime;
-
-        public abstract void onSingleClick(View view);
-
-        @Override
-        public void onClick(View v) {
-            long curClickTime = System.currentTimeMillis();
-            if ((curClickTime - lastClickTime) >= MIN_CLICK_DELAY_TIME) {
-                lastClickTime = curClickTime;
-                onSingleClick(v);
-            }
-        }
-    }
-
-    /**
-     * 同一按钮在短时间内可重复响应点击事件
-     */
-    public abstract class OnMultiClickListener implements View.OnClickListener {
-        public abstract void onMultiClick(View view);
-
-        @Override
-        public void onClick(View v) {
-            onMultiClick(v);
-        }
     }
 
     @Override
